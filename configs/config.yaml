@@ -1,0 +1,35 @@
+vector_store:
+  environment: "us-east-1"
+  index_name: "docupilot"
+  dimension: 1024  # For multilingual-e5-large
+
+agents:
+  news_agent:
+    model: "meta-llama/llama-3.3-8b-instruct:free"
+    temperature: 0.7
+  portfolio_agent:
+    model: "meta-llama/llama-3.3-8b-instruct:free"
+    temperature: 0.7
+  orchestrator_agent:
+    model: "meta-llama/llama-3.3-8b-instruct:free"
+    temperature: 0.7
+  default_agent:
+    model: "meta-llama/llama-3.3-8b-instruct:free"
+    temperature: 0.7
+  
+
+
+api:
+  marketaux:
+    base_url: "https://api.marketaux.com/v1"
+    rate_limit: 100  # requests per minute
+  openrouter:
+    base_url: "https://openrouter.ai/api/v1"
+    site_url: "http://localhost:8501"  # Streamlit default URL
+    site_name: "Financial Assistant"
+
+embedding:
+  model: "llama-text-embed-v2"
+  batch_size: 200
+  chunk_size: 1000
+  chunk_overlap: 200 
