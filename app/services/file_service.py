@@ -5,7 +5,7 @@ import logging
 
 from fastapi import UploadFile
 from app.config import settings
-from app.services.docling_service import DoclingService
+from app.services.document_converter import DocumentConverter
 from app.services.database_service import DatabaseService
 from app.utils.exceptions import AppException
 
@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 class FileService:
     def __init__(self):
-        self.docling_service = DoclingService()
+        self.document_converter = DocumentConverter()
         self.db_service = DatabaseService()
         self.upload_dir = Path(settings.UPLOAD_DIR)
         self.upload_dir.mkdir(exist_ok=True)
@@ -33,8 +33,8 @@ class FileService:
         temp_file_path = await self._save_temp_file(file)
         
         try:
-            # Convert with Docling
-            markdown_content = await self.docling_service.convert_to_markdown(temp_file_path)
+            # Convert with document converter
+            markdown_content = await self.document_converter.convert_to_markdown(temp_file_path)
             
             # Update filename and file type to reflect markdown conversion
             original_name = Path(file.filename).stem  # Get filename without extension

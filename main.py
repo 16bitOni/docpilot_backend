@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="Document Processing API",
-    description="API for uploading and processing documents with Docling",
+    description="API for uploading and processing documents with PyMuPDF and python-docx",
     version="1.0.0"
 )
 

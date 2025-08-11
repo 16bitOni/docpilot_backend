@@ -4,7 +4,7 @@ A FastAPI-based backend service that provides intelligent document management, p
 
 ## Features
 
-- **Document Upload & Processing**: Support for PDF, DOCX, DOC, and TXT files using Docling
+- **Document Upload & Processing**: Support for PDF, DOCX, DOC, and TXT files using PyMuPDF and python-docx
 - **AI-Powered Workspace Agent**: Intelligent document editing and analysis with multiple LLM models
 - **Vector Embeddings**: Document search and similarity matching with Pinecone
 - **Collaborative Workspaces**: Multi-user document collaboration with role-based access
@@ -17,7 +17,7 @@ A FastAPI-based backend service that provides intelligent document management, p
 - **Framework**: FastAPI
 - **Database**: Supabase (PostgreSQL)
 - **Vector Store**: Pinecone
-- **Document Processing**: Docling
+- **Document Processing**: PyMuPDF, python-docx, mammoth
 - **AI Models**: Groq (Llama, Mixtral, Gemma)
 - **Authentication**: JWT with Supabase Auth
 - **Email**: Resend API / Brevo SMTP

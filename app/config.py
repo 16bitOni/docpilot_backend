@@ -34,8 +34,8 @@ class Settings(BaseSettings):
     ALLOWED_FILE_TYPES: List[str] = [".pdf", ".docx", ".doc", ".txt"]
     UPLOAD_DIR: str = "uploads"
     
-    # Docling
-    DOCLING_CONFIG: dict = {}
+    # Document Conversion
+    CONVERSION_CONFIG: dict = {}
     
     class Config:
         env_file = ".env"
